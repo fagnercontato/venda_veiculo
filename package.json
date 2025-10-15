@@ -14,6 +14,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-fileupload": "^1.5.2",
+    "node-mocks-http": "^1.17.2",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },
