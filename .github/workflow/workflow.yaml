@@ -21,9 +21,12 @@ jobs:
         with:
           node-version: 18.
 
-      - name: run intall and build
+      - name: run intall dependencies
         run: | 
           npm install
+      
+      - name: Run tests
+        run: |
           npm run test
 
   # sonarqube:
