@@ -1,0 +1,129 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "venda_veiculo",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000"
+    }
+  ],
+  "paths": {
+    "/venda": {
+      "get": {
+        "summary": "Buscar todas as vendas",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Filtrar venda por id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],        
+        "responses": {
+          "200": {
+            "description": "Lista de vendas retornada com sucesso"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar venda de veículo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cpf": {
+                    "type": "string"
+                  },
+                  "cpfComprador": {
+                    "type": "string"
+                  },
+                  "idTAbelaVeiculo": {
+                    "type": "string"
+                  },
+                  "valorVenda": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "cpf",
+                  "cpfComprador",
+                  "idTAbelaVeiculo",
+                  "valorVenda"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Venda criada com sucesso"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar dados da venda",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "cpfComprador": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "cpfComprador"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Venda atualizada com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir venda",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Venda excluída com sucesso"
+          }
+        }
+      }
+    }
+  }
+}

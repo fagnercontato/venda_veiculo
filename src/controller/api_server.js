@@ -7,8 +7,8 @@ const express = require('express');
 const server = express();
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
-// const swaggerUi = require("swagger-ui-express");
-// const swaggerDocument = require('../../swagger.json');
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require('../../swagger.json');
 
 
 async function startServer() {
@@ -17,7 +17,7 @@ async function startServer() {
     server.use(express.json());
     server.use(fileUpload());
 
-    // server.use(`/documentation`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    server.use(`/documentation`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     server.get(`/venda`, controller.getVenda);
     server.post(`/venda`, controller.createVenda);
     server.put(`/venda`, controller.updateVenda);

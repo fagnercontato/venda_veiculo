@@ -70,8 +70,8 @@ Quando estiver pronto, inicie seu aplicativo executando:
 docker compose up --build
 ```
 
-Seu aplicativo estará acessível em http://localhost:3000, e a documentação do Swagger
-pode ser encontrada em http://localhost:3000/documentation.
+Seu aplicativo estará acessível em http://localhost:4000, e a documentação do Swagger
+pode ser encontrada em http://localhost:4000/documentation.
 
 ### Implementando seu aplicativo na nuvem
 
