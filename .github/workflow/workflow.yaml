@@ -1,0 +1,54 @@
+name: Continuos Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "main"
+    types: [opened, synchronize, reopened]
+
+jobs:
+  continuos-integration:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Using Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.
+
+      - name: run intall and build
+        run: | 
+          npm install
+          npm run test
+
+  # sonarqube:
+  #   name: SonarQube
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+  #     - name: Using Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18.
+
+  #     - name: install dependencies
+  #       run: | 
+  #         npm install
+
+  #     - name: Run tests with coverage
+  #       run: npm run test
+
+  #     - name: SonarQube Scan
+  #       uses: SonarSource/sonarqube-scan-action@v6
+  #       env:
+  #         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        
+        
