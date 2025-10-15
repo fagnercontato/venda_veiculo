@@ -12,9 +12,10 @@ model venda_veiculo {
   id                  String   @id @default(auto()) @map("_id") @db.ObjectId
   cpf                 String
   cpfComprador        String
-  dataProcessamento   DateTime @db.Date
-  dataVenda           DateTime @db.Date
+  dataAtualizacao     DateTime? @default(now()) @map("updated_v")
+  dataProcessamento   DateTime? @db.Date
+  dataVenda           DateTime? @default(now()) @map("created_v") @db.Date
   idTAbelaVeiculo     String
-  pagamentoProcessado Boolean
+  pagamentoProcessado Boolean @default(false)
   valorVenda          Float
 }

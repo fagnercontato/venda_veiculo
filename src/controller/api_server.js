@@ -19,6 +19,9 @@ async function startServer() {
 
     // server.use(`/documentation`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     server.get(`/venda`, controller.getVenda);
+    server.post(`/venda`, controller.createVenda);
+    server.put(`/venda`, controller.updateVenda);
+    server.delete(`/venda`, controller.deleteVenda);
 }
 
 startServer()
