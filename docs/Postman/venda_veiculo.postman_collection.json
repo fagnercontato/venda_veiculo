@@ -75,6 +75,24 @@
 				"url": "http://localhost:4000/venda"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:4000/venda",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"68efdaa668a78db30c73c894\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/venda"
+			},
+			"response": []
 		}
 	]
 }

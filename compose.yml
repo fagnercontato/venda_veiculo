@@ -1,0 +1,22 @@
+services:
+  app:
+    container_name: app-venda-veiculo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "${HTTP_PORT}:${HTTP_PORT}"
+    volumes:
+      - .:/home/node/app
+    networks:
+      - app-network    
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: '1GB'
+networks:
+  app-network:
