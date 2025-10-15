@@ -55,6 +55,12 @@ cp .env.example .env
 ```
 
 Em seguida, edite o arquivo .env para incluir os valores apropriados para sua configuração.
+Observação as credenciais do banco de dados são exclusivamento do mongo db Atlas
+consulte a documentação:
+[MongoDB Atlas](https://www.mongodb.com/pt-br/docs/atlas)
+[Mais detalhes](https://www.youtube.com/watch?v=5r51JcFmn5w&t=2049s)
+
+
 
 ### Construindo e executando seu aplicativo
 
@@ -99,3 +105,4 @@ Este comando criará e iniciará todos os serviços definidos no seu arquivo doc
 
 ### Referencias
 * [Docker's Node.js guide](https://docs.docker.com/language/nodejs/)
+* [MongoDB Atlas](https://www.mongodb.com/pt-br/docs/atlas)
