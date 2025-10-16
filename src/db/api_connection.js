@@ -13,6 +13,18 @@ exports.getVenda = async (id) => {
     }
 }
 
+exports.getVendaPayment = async (idPagamento) => {
+    try {
+        const vendas = await prisma.venda_veiculo.findMany({where: { idPagamento }});
+        
+       return vendas;
+        
+    } catch (error) {
+        console.log(`Houve um erro ao buscar dados: ${error.message}`);
+        throw error;
+    }
+}
+
 exports.createVenda = async (dados) => {
     try {
         const {...campos } = dados;

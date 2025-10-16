@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.17.1",
+    "axios": "^1.12.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-fileupload": "^1.5.2",
+    "mercadopago": "^2.9.0",
     "node-mocks-http": "^1.17.2",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"

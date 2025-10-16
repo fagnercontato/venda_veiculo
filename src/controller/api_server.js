@@ -22,6 +22,8 @@ async function startServer() {
     server.post(`/venda`, controller.createVenda);
     server.put(`/venda`, controller.updateVenda);
     server.delete(`/venda`, controller.deleteVenda);
+    server.get(`/venda/sucess`, controller.successPayment);
+    server.get(`/venda/failure`, controller.failurePayment);
 }
 
 startServer()

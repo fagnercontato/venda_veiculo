@@ -15,7 +15,9 @@ model venda_veiculo {
   dataAtualizacao     DateTime? @default(now()) @map("updated_v")
   dataProcessamento   DateTime? @db.Date
   dataVenda           DateTime? @default(now()) @map("created_v") @db.Date
+  idPagamento         String?
   idTAbelaVeiculo     String
+  pagamentoLink       String?
   pagamentoProcessado Boolean @default(false)
   valorVenda          Float
 }
